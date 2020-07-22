@@ -3,13 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mx-eternity.github.io/docs/developer/</loc>
+    <lastmod>2020-07-22T20:50:59+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mx-eternity.github.io/</loc>
     <lastmod>2020-07-22T20:50:59+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mx-eternity.github.io/docs/developer/</loc>
-    <lastmod>2020-07-22T20:50:59+02:00</lastmod>
+    <loc>https://mx-eternity.github.io/docs/developer/getting_started/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mx-eternity.github.io/docs/user/getting_started/</loc>
   </url>
   
   <url>
