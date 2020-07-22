@@ -30,6 +30,16 @@ Example Config#plugins_path: &amp;#34;./plugins&amp;#34; matrix: username: &a
     
     <item>
       <title></title>
+      <link>https://mx-eternity.github.io/docs/user/flow_reference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mx-eternity.github.io/docs/user/flow_reference/</guid>
+      <description>Flow File Reference#The flow file is defined in yaml. Below is a example file. The table explains what each variable does.
+Example Flow#TODO </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://mx-eternity.github.io/docs/user/getting_started/quickstart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
