@@ -1,0 +1,15 @@
+{
+  "name": "Matrix Eternity Documentation",
+  "short_name": "Matrix Eternity Documentation",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512"
+    }
+  ]
+}
