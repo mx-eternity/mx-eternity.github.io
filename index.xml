@@ -5,10 +5,36 @@
     <link>https://mx-eternity.github.io/</link>
     <description>Recent content on Matrix Eternity Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     
 	<atom:link href="https://mx-eternity.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://mx-eternity.github.io/docs/developer/getting_started/quickstart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mx-eternity.github.io/docs/developer/getting_started/quickstart/</guid>
+      <description>Quick Start#</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mx-eternity.github.io/docs/user/config_reference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mx-eternity.github.io/docs/user/config_reference/</guid>
+      <description>Config File Reference#</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mx-eternity.github.io/docs/user/getting_started/quickstart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mx-eternity.github.io/docs/user/getting_started/quickstart/</guid>
+      <description>Quick Start#</description>
+    </item>
     
   </channel>
 </rss>
