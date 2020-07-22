@@ -25,7 +25,7 @@
       
       <guid>https://mx-eternity.github.io/docs/user/config_reference/</guid>
       <description>Config File Reference#The config file is defined in yaml. Below is a example file. The table explains what each variable does.
-Example Config#plugins_path: &amp;#34;./plugins&amp;#34; matrix: username: &amp;#34;@bot:example.com&amp;#34; access_token: &amp;#34;&amp;#34; homeserver_url: &amp;#34;https://example.com&amp;#34; store_path: &amp;#34;./store&amp;#34; Refernce#Root#   Key Description     plugins_path Path to a folder which contains the plugin wasm files   matrix See Matrix    Matrix#   Key Description     username The Matrix ID of the bot User   access_token The Matrix access token for the above bot user which allows to talk to the Homeserver   homeserver_url The URL of the Homeserver where the Bot user is at.</description>
+Example Config#plugins_path: &amp;#34;./plugins&amp;#34; matrix: username: &amp;#34;@bot:example.com&amp;#34; access_token: &amp;#34;&amp;#34; homeserver_url: &amp;#34;https://example.com&amp;#34; store_path: &amp;#34;./store&amp;#34; Reference#Root#   Key Description     plugins_path Path to a folder which contains the plugin wasm files   matrix See Matrix    Matrix#   Key Description     username The Matrix ID of the bot User   access_token The Matrix access token for the above bot user which allows to talk to the Homeserver   homeserver_url The URL of the Homeserver where the Bot user is at.</description>
     </item>
     
     <item>
