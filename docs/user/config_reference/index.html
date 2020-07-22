@@ -4,17 +4,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Config File Reference#">
+<meta name="description" content="Config File Reference#The config file is defined in yaml. Below is a example file. The table explains what each variable does.
+Example Config#plugins_path: &#34;./plugins&#34; matrix: username: &#34;@bot:example.com&#34; access_token: &#34;&#34; homeserver_url: &#34;https://example.com&#34; store_path: &#34;./store&#34; Refernce#Root#   Key Description     plugins_path Path to a folder which contains the plugin wasm files   matrix See Matrix    Matrix#   Key Description     username The Matrix ID of the bot User   access_token The Matrix access token for the above bot user which allows to talk to the Homeserver   homeserver_url The URL of the Homeserver where the Bot user is at.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="Config File Reference#" />
+<meta property="og:description" content="Config File Reference#The config file is defined in yaml. Below is a example file. The table explains what each variable does.
+Example Config#plugins_path: &#34;./plugins&#34; matrix: username: &#34;@bot:example.com&#34; access_token: &#34;&#34; homeserver_url: &#34;https://example.com&#34; store_path: &#34;./store&#34; Refernce#Root#   Key Description     plugins_path Path to a folder which contains the plugin wasm files   matrix See Matrix    Matrix#   Key Description     username The Matrix ID of the bot User   access_token The Matrix access token for the above bot user which allows to talk to the Homeserver   homeserver_url The URL of the Homeserver where the Bot user is at." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mx-eternity.github.io/docs/user/config_reference/" />
-<meta property="article:modified_time" content="2020-07-22T22:01:39+02:00" />
+<meta property="article:modified_time" content="2020-07-22T22:19:32+02:00" />
 <title>Config Reference | Matrix Eternity Documentation</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1a131c7481808eb224a861e902f1d8c9281d14ff14ed144454d086c8d6fd5cca.css" integrity="sha256-GhMcdIGAjrIkqGHpAvHYySgdFP8U7RREVNCGyNb9XMo=">
-<script defer src="/en.search.min.137eaa1f7d61de7ef70606b1d56818ad261fb68619d92637cdd774731a0dbe64.js" integrity="sha256-E36qH31h3n73Bgax1WgYrSYftoYZ2SY3zdd0cxoNvmQ="></script>
+<script defer src="/en.search.min.1f471391762479b73ec14d9669fb799c19ee6bdf1bf882c3db2f0acc6c499335.js" integrity="sha256-H0cTkXYkebc&#43;wU2Waft5nBnua98b&#43;ILD2y8KzGxJkzU="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -52,111 +54,28 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
-
-
-
-  
-  
-  
-  
-
-  
   <ul>
-    
-      
-        <li>
-          
-  
-    <a href="/docs/developer/" class="">Developer Docs</a>
-  
-
-          
-  
-  
-  
-
-  
-  <ul>
-    
-      
-        <li>
-          
-  
-    <a href="/docs/developer/getting_started/" class="collapsed ">Get Started Overview</a>
-  
-
-          
-  
-  
-  
-
-  
-
-        </li>
-      
-    
-  </ul>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-    <a href="/docs/user/" class="">User Docs</a>
-  
-
-          
-  
-  
-  
-
-  
-  <ul>
-    
-      
-        <li>
-          
-  
-    <a href="/docs/user/config_reference/" class="active">Config Reference</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-    <a href="/docs/user/getting_started/" class="collapsed ">Get Started Overview</a>
-  
-
-          
-  
-  
-  
-
-  
-
-        </li>
-      
-    
-  </ul>
-  
-
-        </li>
-      
-    
-  </ul>
-  
-
-
-
-
-
+<li><a href="/docs/user/"><strong>User Docs</strong></a>
+<ul>
+<li><a href="/docs/user/getting_started/"><strong>Getting Started</strong></a>
+<ul>
+<li><a href="/docs/developer/getting_started/quickstart/"><strong>Quickstart</strong></a></li>
+</ul>
+</li>
+<li><a href="/docs/user/config_reference/"class=active><strong>Config Reference</strong></a></li>
+</ul>
+</li>
+<li><a href="/docs/developer/"><strong>Developer Docs</strong></a>
+<ul>
+<li><a href="/docs/developer/getting_started/"><strong>Getting Started</strong></a>
+<ul>
+<li><a href="/docs/developer/getting_started/quickstart/"><strong>Quickstart</strong></a>
+<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -213,7 +132,17 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#config-file-reference">Config File Reference</a></li>
+    <li><a href="#config-file-reference">Config File Reference</a>
+      <ul>
+        <li><a href="#example-config">Example Config</a></li>
+        <li><a href="#refernce">Refernce</a>
+          <ul>
+            <li><a href="#root">Root</a></li>
+            <li><a href="#matrix">Matrix</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -229,6 +158,74 @@ https://github.com/alex-shpak/hugo-book
   Config File Reference
   <a class="anchor" href="#config-file-reference">#</a>
 </h1>
+<p>The config file is defined in yaml. Below is a example file. The table explains what each variable does.</p>
+<h2 id="example-config">
+  Example Config
+  <a class="anchor" href="#example-config">#</a>
+</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">plugins_path</span>: <span style="color:#e6db74">&#34;./plugins&#34;</span>
+
+<span style="color:#66d9ef">matrix</span>:
+  <span style="color:#66d9ef">username</span>: <span style="color:#e6db74">&#34;@bot:example.com&#34;</span>
+  <span style="color:#66d9ef">access_token</span>: <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#66d9ef">homeserver_url</span>: <span style="color:#e6db74">&#34;https://example.com&#34;</span>
+  <span style="color:#66d9ef">store_path</span>: <span style="color:#e6db74">&#34;./store&#34;</span>
+</code></pre></div><h2 id="refernce">
+  Refernce
+  <a class="anchor" href="#refernce">#</a>
+</h2>
+<h3 id="root">
+  Root
+  <a class="anchor" href="#root">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plugins_path</td>
+<td>Path to a folder which contains the plugin wasm files</td>
+</tr>
+<tr>
+<td>matrix</td>
+<td>See <a href="#matrix">Matrix</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="matrix">
+  Matrix
+  <a class="anchor" href="#matrix">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>The Matrix ID of the bot User</td>
+</tr>
+<tr>
+<td>access_token</td>
+<td>The Matrix access token for the above bot user which allows to talk to the Homeserver</td>
+</tr>
+<tr>
+<td>homeserver_url</td>
+<td>The URL of the Homeserver where the Bot user is at. This is often the url after the colon or that url with a <code>matrix.</code> subdomain in front. It must contain <code>https://</code> in front of it</td>
+</tr>
+<tr>
+<td>store_path</td>
+<td>This is where the synced data of that user gets cached too. This allows us to not produce the same output twice</td>
+</tr>
+</tbody>
+</table>
 </article>
  
       
@@ -239,7 +236,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/mx-eternity/docs/commit/c0e983457db7a13f75bbd6bb8e5836d51af411ef" title='Last modified by Marcel | 22 July, 2020' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/mx-eternity/docs/commit/e44ce3bc719fc580624058eee586d88b3b16a6fe" title='Last modified by Marcel | 22 July, 2020' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>22 July, 2020</span>
     </a>
@@ -272,7 +269,17 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#config-file-reference">Config File Reference</a></li>
+    <li><a href="#config-file-reference">Config File Reference</a>
+      <ul>
+        <li><a href="#example-config">Example Config</a></li>
+        <li><a href="#refernce">Refernce</a>
+          <ul>
+            <li><a href="#root">Root</a></li>
+            <li><a href="#matrix">Matrix</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
