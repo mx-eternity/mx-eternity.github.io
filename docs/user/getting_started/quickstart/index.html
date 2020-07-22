@@ -4,17 +4,21 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Quick Start#">
+<meta name="description" content="Quick Start#Step 1: Install mx-eternity#Step 1.1: Install Rust#curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh
+For other systems check out https://rustup.rs/
+Step 1.2: Install eternity# git clone https://github.com/mx-eternity/mx-eternity cd eternity cargo install  Step 2: Setup the folder structure#This step is currently required to be done manually. In the future there will be a cli sub command to generate the folder structure and a example configuration.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="Quick Start#" />
+<meta property="og:description" content="Quick Start#Step 1: Install mx-eternity#Step 1.1: Install Rust#curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh
+For other systems check out https://rustup.rs/
+Step 1.2: Install eternity# git clone https://github.com/mx-eternity/mx-eternity cd eternity cargo install  Step 2: Setup the folder structure#This step is currently required to be done manually. In the future there will be a cli sub command to generate the folder structure and a example configuration." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mx-eternity.github.io/docs/user/getting_started/quickstart/" />
-<meta property="article:modified_time" content="2020-07-22T22:01:39+02:00" />
+<meta property="article:modified_time" content="2020-07-22T23:48:48+02:00" />
 <title>Quickstart | Matrix Eternity Documentation</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1a131c7481808eb224a861e902f1d8c9281d14ff14ed144454d086c8d6fd5cca.css" integrity="sha256-GhMcdIGAjrIkqGHpAvHYySgdFP8U7RREVNCGyNb9XMo=">
-<script defer src="/en.search.min.246710787466baa3eda1238f4480a4580f6336403c417f4866e48ef090d551ca.js" integrity="sha256-JGcQeHRmuqPtoSOPRICkWA9jNkA8QX9IZuSO8JDVUco="></script>
+<script defer src="/en.search.min.426b8f479f0808ce3dba9e529f079df45eb0cd591bac5c79389c2beaa267df69.js" integrity="sha256-QmuPR58ICM49up5Snwed9F6wzVkbrFx5OJwr6qJn32k="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -57,7 +61,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/docs/user/getting_started/"><strong>Getting Started</strong></a>
 <ul>
-<li><a href="/docs/developer/getting_started/quickstart/"><strong>Quickstart</strong></a></li>
+<li><a href="/docs/user/getting_started/quickstart/"class=active><strong>Quickstart</strong></a></li>
 </ul>
 </li>
 <li><a href="/docs/user/config_reference/"><strong>Config Reference</strong></a></li>
@@ -130,7 +134,19 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#quick-start">Quick Start</a></li>
+    <li><a href="#quick-start">Quick Start</a>
+      <ul>
+        <li><a href="#step-1-install-mx-eternity">Step 1: Install mx-eternity</a>
+          <ul>
+            <li><a href="#step-11-install-rust">Step 1.1: Install Rust</a></li>
+            <li><a href="#step-12-install-eternity">Step 1.2: Install eternity</a></li>
+          </ul>
+        </li>
+        <li><a href="#step-2-setup-the-folder-structure">Step 2: Setup the folder structure</a></li>
+        <li><a href="#step-3-fill-the-configuration-with-the-essential-fields">Step 3: Fill the configuration with the essential fields</a></li>
+        <li><a href="#step-4-run-eternity">Step 4: Run eternity</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -146,6 +162,53 @@ https://github.com/alex-shpak/hugo-book
   Quick Start
   <a class="anchor" href="#quick-start">#</a>
 </h1>
+<h2 id="step-1-install-mx-eternity">
+  Step 1: Install mx-eternity
+  <a class="anchor" href="#step-1-install-mx-eternity">#</a>
+</h2>
+<h3 id="step-11-install-rust">
+  Step 1.1: Install Rust
+  <a class="anchor" href="#step-11-install-rust">#</a>
+</h3>
+<p><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></p>
+<p>For other systems check out <a href="https://rustup.rs/">https://rustup.rs/</a></p>
+<h3 id="step-12-install-eternity">
+  Step 1.2: Install eternity
+  <a class="anchor" href="#step-12-install-eternity">#</a>
+</h3>
+<ol>
+<li><code>git clone https://github.com/mx-eternity/mx-eternity</code></li>
+<li><code>cd eternity</code></li>
+<li><code>cargo install</code></li>
+</ol>
+<h2 id="step-2-setup-the-folder-structure">
+  Step 2: Setup the folder structure
+  <a class="anchor" href="#step-2-setup-the-folder-structure">#</a>
+</h2>
+<p>This step is currently required to be done manually. In the future there will be a cli sub command to generate the folder structure and a example configuration.</p>
+<pre><code>│── plugins
+│   │
+│   └── # Contains all plugins. Usually a folder containing a plugin config and a wasm file.
+│── config.yml # The general config to configure eternity
+│── state # The folder where the state gets stored into. This might get autogenerated but you should create it first to be on the save side.
+</code></pre><p>Eternity will try to load all plugins in the plugins folder. Currently the only way to deactivate them is to move them to another folder</p>
+<h2 id="step-3-fill-the-configuration-with-the-essential-fields">
+  Step 3: Fill the configuration with the essential fields
+  <a class="anchor" href="#step-3-fill-the-configuration-with-the-essential-fields">#</a>
+</h2>
+<p>See also the <a href="/docs/user/config_reference/">Config Reference</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">plugins_path</span>: <span style="color:#e6db74">&#34;./plugins&#34;</span>
+
+<span style="color:#66d9ef">matrix</span>:
+  <span style="color:#66d9ef">username</span>: <span style="color:#e6db74">&#34;&lt;Bot MXID&gt;&#34;</span>
+  <span style="color:#66d9ef">access_token</span>: <span style="color:#e6db74">&#34;&lt;Access Token&gt;&#34;</span>
+  <span style="color:#66d9ef">homeserver_url</span>: <span style="color:#e6db74">&#34;https://&lt;Homeserver domain&gt;&#34;</span>
+  <span style="color:#66d9ef">store_path</span>: <span style="color:#e6db74">&#34;./store&#34;</span>
+</code></pre></div><h2 id="step-4-run-eternity">
+  Step 4: Run eternity
+  <a class="anchor" href="#step-4-run-eternity">#</a>
+</h2>
+<p>To run eternity you simply can execute <code>eternity</code>. Keep in mind that all config folders that are relative are relative to the folder where eternity was started in.</p>
 </article>
  
       
@@ -156,7 +219,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/mx-eternity/docs/commit/c0e983457db7a13f75bbd6bb8e5836d51af411ef" title='Last modified by Marcel | 22 July, 2020' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/mx-eternity/docs/commit/d3e5f664727a8932834004306a467737bf106856" title='Last modified by Marcel | 22 July, 2020' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>22 July, 2020</span>
     </a>
@@ -189,7 +252,19 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#quick-start">Quick Start</a></li>
+    <li><a href="#quick-start">Quick Start</a>
+      <ul>
+        <li><a href="#step-1-install-mx-eternity">Step 1: Install mx-eternity</a>
+          <ul>
+            <li><a href="#step-11-install-rust">Step 1.1: Install Rust</a></li>
+            <li><a href="#step-12-install-eternity">Step 1.2: Install eternity</a></li>
+          </ul>
+        </li>
+        <li><a href="#step-2-setup-the-folder-structure">Step 2: Setup the folder structure</a></li>
+        <li><a href="#step-3-fill-the-configuration-with-the-essential-fields">Step 3: Fill the configuration with the essential fields</a></li>
+        <li><a href="#step-4-run-eternity">Step 4: Run eternity</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

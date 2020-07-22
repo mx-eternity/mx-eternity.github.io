@@ -15,7 +15,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mx-eternity.github.io/docs/user/getting_started/quickstart/</guid>
-      <description>Quick Start#</description>
+      <description>Quick Start#Step 1: Install mx-eternity#Step 1.1: Install Rust#curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh
+For other systems check out https://rustup.rs/
+Step 1.2: Install eternity# git clone https://github.com/mx-eternity/mx-eternity cd eternity cargo install  Step 2: Setup the folder structure#This step is currently required to be done manually. In the future there will be a cli sub command to generate the folder structure and a example configuration.</description>
     </item>
     
   </channel>
