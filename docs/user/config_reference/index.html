@@ -5,18 +5,18 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Config File Reference#The config file is defined in yaml. Below is a example file. The table explains what each variable does.
-Example Config#plugins_path: &#34;./plugins&#34; matrix: username: &#34;@bot:example.com&#34; access_token: &#34;&#34; homeserver_url: &#34;https://example.com&#34; store_path: &#34;./store&#34; Reference#Root#   Key Description     plugins_path Path to a folder which contains the plugin wasm files   matrix See Matrix    Matrix#   Key Description     username The Matrix ID of the bot User   access_token The Matrix access token for the above bot user which allows to talk to the Homeserver   homeserver_url The URL of the Homeserver where the Bot user is at.">
+Example Config#plugins_path: &#34;./plugins&#34; send_crashreports: true matrix: username: &#34;@bot:example.com&#34; access_token: &#34;&#34; homeserver_url: &#34;https://example.com&#34; store_path: &#34;./store&#34; Reference#Root#   Key Description     plugins_path Path to a folder which contains the plugin wasm files   send_crashreports Set this to true if you allow crashreports being sent to sentry (Default false)   matrix See Matrix    Matrix#   Key Description     username The Matrix ID of the bot User   access_token The Matrix access token for the above bot user which allows to talk to the Homeserver   homeserver_url The URL of the Homeserver where the Bot user is at.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="Config File Reference#The config file is defined in yaml. Below is a example file. The table explains what each variable does.
-Example Config#plugins_path: &#34;./plugins&#34; matrix: username: &#34;@bot:example.com&#34; access_token: &#34;&#34; homeserver_url: &#34;https://example.com&#34; store_path: &#34;./store&#34; Reference#Root#   Key Description     plugins_path Path to a folder which contains the plugin wasm files   matrix See Matrix    Matrix#   Key Description     username The Matrix ID of the bot User   access_token The Matrix access token for the above bot user which allows to talk to the Homeserver   homeserver_url The URL of the Homeserver where the Bot user is at." />
+Example Config#plugins_path: &#34;./plugins&#34; send_crashreports: true matrix: username: &#34;@bot:example.com&#34; access_token: &#34;&#34; homeserver_url: &#34;https://example.com&#34; store_path: &#34;./store&#34; Reference#Root#   Key Description     plugins_path Path to a folder which contains the plugin wasm files   send_crashreports Set this to true if you allow crashreports being sent to sentry (Default false)   matrix See Matrix    Matrix#   Key Description     username The Matrix ID of the bot User   access_token The Matrix access token for the above bot user which allows to talk to the Homeserver   homeserver_url The URL of the Homeserver where the Bot user is at." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mx-eternity.github.io/docs/user/config_reference/" />
-<meta property="article:modified_time" content="2020-07-22T22:20:30+02:00" />
+<meta property="article:modified_time" content="2020-07-23T23:03:09+02:00" />
 <title>Config Reference | Matrix Eternity Documentation</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1a131c7481808eb224a861e902f1d8c9281d14ff14ed144454d086c8d6fd5cca.css" integrity="sha256-GhMcdIGAjrIkqGHpAvHYySgdFP8U7RREVNCGyNb9XMo=">
-<script defer src="/en.search.min.a2cd129e0d250f0bfb250215283916153cdf3b638bd5a78d5862861825659bc1.js" integrity="sha256-os0Sng0lDwv7JQIVKDkWFTzfO2OL1aeNWGKGGCVlm8E="></script>
+<script defer src="/en.search.min.2846c70875795655ff6c5738eb6585aff40d4bd228d28c453b77865d0f629bb4.js" integrity="sha256-KEbHCHV5VlX/bFc462WFr/QNS9Io0oxFO3eGXQ9im7Q="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -70,10 +70,11 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/docs/developer/getting_started/"><strong>Getting Started</strong></a>
 <ul>
-<li><a href="/docs/developer/getting_started/quickstart/"><strong>Quickstart</strong></a>
-<br /></li>
+<li><a href="/docs/developer/getting_started/quickstart/"><strong>Quickstart</strong></a></li>
 </ul>
 </li>
+<li><a href="/docs/developer/plugin_config_reference/"><strong>Plugin Config Reference</strong></a>
+<br /></li>
 </ul>
 </li>
 </ul>
@@ -165,6 +166,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#example-config">#</a>
 </h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">plugins_path</span>: <span style="color:#e6db74">&#34;./plugins&#34;</span>
+<span style="color:#66d9ef">send_crashreports</span>: <span style="color:#66d9ef">true</span>
 
 <span style="color:#66d9ef">matrix</span>:
   <span style="color:#66d9ef">username</span>: <span style="color:#e6db74">&#34;@bot:example.com&#34;</span>
@@ -190,6 +192,10 @@ https://github.com/alex-shpak/hugo-book
 <tr>
 <td>plugins_path</td>
 <td>Path to a folder which contains the plugin wasm files</td>
+</tr>
+<tr>
+<td>send_crashreports</td>
+<td>Set this to true if you allow crashreports being sent to sentry (Default false)</td>
 </tr>
 <tr>
 <td>matrix</td>
@@ -237,9 +243,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/mx-eternity/docs/commit/db8ac4f12489c00b0ecea79ce1ed77d38be4b08c" title='Last modified by Marcel | 22 July, 2020' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/mx-eternity/docs/commit/c92fdd12c4def44c19e746ed30585f9e7ec78f76" title='Last modified by Marcel | 23 July, 2020' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>22 July, 2020</span>
+      <span>23 July, 2020</span>
     </a>
   </div>
 

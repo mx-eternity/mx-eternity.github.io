@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Plugin Config File Reference#The plugin file is defined in yaml. Below is a example file. The table explains what each variable does.
+Example Flow#name: gitlab_plugin version: 0.1.0 exported_functions: - get_issues - name: add_issue args: - repo - title - text has_help: true license: AGPL-3.0-or-later depndencies: [] TODO: plan Database managment
+Reference#Root#   Key Description     name An identifier to use with the dependency array in other plugins   version A semver version of the plugin to identify the version (In the future might make migrations possible)   exported_functions A list of functions that can be used inside of flows.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Plugin Config File Reference#The plugin file is defined in yaml. Below is a example file. The table explains what each variable does.
+Example Flow#name: gitlab_plugin version: 0.1.0 exported_functions: - get_issues - name: add_issue args: - repo - title - text has_help: true license: AGPL-3.0-or-later depndencies: [] TODO: plan Database managment
+Reference#Root#   Key Description     name An identifier to use with the dependency array in other plugins   version A semver version of the plugin to identify the version (In the future might make migrations possible)   exported_functions A list of functions that can be used inside of flows." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mx-eternity.github.io/docs/developer/plugin_config_reference/" />
+<meta property="article:modified_time" content="2020-07-23T23:03:09+02:00" />
+<title>Plugin Config Reference | Matrix Eternity Documentation</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.1a131c7481808eb224a861e902f1d8c9281d14ff14ed144454d086c8d6fd5cca.css" integrity="sha256-GhMcdIGAjrIkqGHpAvHYySgdFP8U7RREVNCGyNb9XMo=">
+<script defer src="/en.search.min.2846c70875795655ff6c5738eb6585aff40d4bd228d28c453b77865d0f629bb4.js" integrity="sha256-KEbHCHV5VlX/bFc462WFr/QNS9Io0oxFO3eGXQ9im7Q="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Matrix Eternity Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/docs/user/"><strong>User Docs</strong></a>
+<ul>
+<li><a href="/docs/user/getting_started/"><strong>Getting Started</strong></a>
+<ul>
+<li><a href="/docs/user/getting_started/quickstart/"><strong>Quickstart</strong></a></li>
+</ul>
+</li>
+<li><a href="/docs/user/config_reference/"><strong>Config Reference</strong></a></li>
+<li><a href="/docs/user/flow_reference/"><strong>Flow Reference</strong></a></li>
+</ul>
+</li>
+<li><a href="/docs/developer/"><strong>Developer Docs</strong></a>
+<ul>
+<li><a href="/docs/developer/getting_started/"><strong>Getting Started</strong></a>
+<ul>
+<li><a href="/docs/developer/getting_started/quickstart/"><strong>Quickstart</strong></a></li>
+</ul>
+</li>
+<li><a href="/docs/developer/plugin_config_reference/"class=active><strong>Plugin Config Reference</strong></a>
+<br /></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/mx-eternity/docs" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Plugin Config Reference</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#plugin-config-file-reference">Plugin Config File Reference</a>
+      <ul>
+        <li><a href="#example-flow">Example Flow</a></li>
+        <li><a href="#reference">Reference</a>
+          <ul>
+            <li><a href="#root">Root</a></li>
+          </ul>
+        </li>
+        <li><a href="#functions">Functions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="plugin-config-file-reference">
+  Plugin Config File Reference
+  <a class="anchor" href="#plugin-config-file-reference">#</a>
+</h1>
+<p>The plugin file is defined in yaml. Below is a example file. The table explains what each variable does.</p>
+<h2 id="example-flow">
+  Example Flow
+  <a class="anchor" href="#example-flow">#</a>
+</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: gitlab_plugin
+<span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">0.1.0</span>
+<span style="color:#66d9ef">exported_functions</span>:
+  - get_issues
+  - <span style="color:#66d9ef">name</span>: add_issue
+    <span style="color:#66d9ef">args</span>:
+    - repo
+    - title
+    - text
+<span style="color:#66d9ef">has_help</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#66d9ef">license</span>: AGPL<span style="color:#ae81ff">-3.0</span>-or-later
+<span style="color:#66d9ef">depndencies</span>: []
+</code></pre></div><p>TODO: plan Database managment</p>
+<h2 id="reference">
+  Reference
+  <a class="anchor" href="#reference">#</a>
+</h2>
+<h3 id="root">
+  Root
+  <a class="anchor" href="#root">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>An identifier to use with the dependency array in other plugins</td>
+</tr>
+<tr>
+<td>version</td>
+<td>A semver version of the plugin to identify the version (In the future might make migrations possible)</td>
+</tr>
+<tr>
+<td>exported_functions</td>
+<td>A list of functions that can be used inside of flows. This is needed as we cant detect the exported functions from the wasm blob. See: <a href="#functions">Functions</a> for the extended version</td>
+</tr>
+<tr>
+<td>has_help</td>
+<td>Indicated if the there is a <code>plugin_help</code> function available that generates a helptext.</td>
+</tr>
+<tr>
+<td>license</td>
+<td>The license identifier of the plugin</td>
+</tr>
+<tr>
+<td>depndencies</td>
+<td>A list of other plugins that are required to be run first. It takes the name of the plugin as a string</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions">
+  Functions
+  <a class="anchor" href="#functions">#</a>
+</h2>
+<p>This extended format is required if the functions takes arguments and therefor needs to be handled different. It also indicates in what order these arguments should be input by the user.</p>
+<p>TODO: This is up for discussion as it might be intersting to define what kind of arguments these are (message args, stuff from a dependency, db values, other stuff). Also information if it is optional should be taken in account.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>The exact name of the function</td>
+</tr>
+<tr>
+<td>args</td>
+<td>A list of possible arguments in the function to be sent by a user</td>
+</tr>
+</tbody>
+</table>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/mx-eternity/docs/commit/c92fdd12c4def44c19e746ed30585f9e7ec78f76" title='Last modified by Marcel | 23 July, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>23 July, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/mx-eternity/docs/edit/master/content/docs/developer/plugin_config_reference.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#plugin-config-file-reference">Plugin Config File Reference</a>
+      <ul>
+        <li><a href="#example-flow">Example Flow</a></li>
+        <li><a href="#reference">Reference</a>
+          <ul>
+            <li><a href="#root">Root</a></li>
+          </ul>
+        </li>
+        <li><a href="#functions">Functions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
