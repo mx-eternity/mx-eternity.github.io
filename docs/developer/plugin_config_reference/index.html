@@ -13,12 +13,12 @@ Example Flow#name: gitlab_plugin version: 0.1.0 exported_functions: - get_iss
 Reference#Root#   Key Description     name An identifier to use with the dependency array in other plugins   version A semver version of the plugin to identify the version (In the future might make migrations possible)   exported_functions A list of functions that can be used inside of flows." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mx-eternity.github.io/docs/developer/plugin_config_reference/" />
-<meta property="article:modified_time" content="2020-07-23T23:03:09+02:00" />
+<meta property="article:modified_time" content="2020-07-23T23:06:17+02:00" />
 <title>Plugin Config Reference | Matrix Eternity Documentation</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1a131c7481808eb224a861e902f1d8c9281d14ff14ed144454d086c8d6fd5cca.css" integrity="sha256-GhMcdIGAjrIkqGHpAvHYySgdFP8U7RREVNCGyNb9XMo=">
-<script defer src="/en.search.min.2846c70875795655ff6c5738eb6585aff40d4bd228d28c453b77865d0f629bb4.js" integrity="sha256-KEbHCHV5VlX/bFc462WFr/QNS9Io0oxFO3eGXQ9im7Q="></script>
+<script defer src="/en.search.min.5bef6835f3f20f6e81a5e7173d64145f5d70eb7f0c06085b4aeb7b9989bbc17b.js" integrity="sha256-W&#43;9oNfPyD26BpecXPWQUX11w638MBghbSut7mYm7wXs="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -227,7 +227,11 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#functions">#</a>
 </h2>
 <p>This extended format is required if the functions takes arguments and therefor needs to be handled different. It also indicates in what order these arguments should be input by the user.</p>
-<p>TODO: This is up for discussion as it might be intersting to define what kind of arguments these are (message args, stuff from a dependency, db values, other stuff). Also information if it is optional should be taken in account.</p>
+<blockquote class="book-hint warning">
+  <strong>TODO</strong><br>
+This is up for discussion as it might be intersting to define what kind of arguments these are (message args, stuff from a dependency, db values, other stuff). Also information if it is optional should be taken in account.
+</blockquote>
+
 <table>
 <thead>
 <tr>
@@ -256,7 +260,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/mx-eternity/docs/commit/c92fdd12c4def44c19e746ed30585f9e7ec78f76" title='Last modified by Marcel | 23 July, 2020' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/mx-eternity/docs/commit/b49a0a8d056df6978de9d6030d1780a26074e1a9" title='Last modified by Marcel | 23 July, 2020' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>23 July, 2020</span>
     </a>
