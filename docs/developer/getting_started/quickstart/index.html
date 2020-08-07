@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Quick Start#">
+<meta name="description" content="Quick Start#Example Plugin#lib.rs
+// Define a function that is imported into the module. // See the list (TODO) what functions are available to be imported. // We use here the send_notice function which sends a m.notice event extern &#34;C&#34; { fn send_notice(content_ptr: *const u8, content_len: usize, room_id_ptr: *const u8, room_id_len: usize); } // Export a function named &#34;main_plugin&#34;. This can be called // from the framework!">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="Quick Start#" />
+<meta property="og:description" content="Quick Start#Example Plugin#lib.rs
+// Define a function that is imported into the module. // See the list (TODO) what functions are available to be imported. // We use here the send_notice function which sends a m.notice event extern &#34;C&#34; { fn send_notice(content_ptr: *const u8, content_len: usize, room_id_ptr: *const u8, room_id_len: usize); } // Export a function named &#34;main_plugin&#34;. This can be called // from the framework!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mx-eternity.github.io/docs/developer/getting_started/quickstart/" />
 <meta property="article:modified_time" content="2020-07-22T22:01:39+02:00" />
@@ -14,7 +16,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1a131c7481808eb224a861e902f1d8c9281d14ff14ed144454d086c8d6fd5cca.css" integrity="sha256-GhMcdIGAjrIkqGHpAvHYySgdFP8U7RREVNCGyNb9XMo=">
-<script defer src="/en.search.min.5bef6835f3f20f6e81a5e7173d64145f5d70eb7f0c06085b4aeb7b9989bbc17b.js" integrity="sha256-W&#43;9oNfPyD26BpecXPWQUX11w638MBghbSut7mYm7wXs="></script>
+<script defer src="/en.search.min.81c8655e9446e654bc4ab286f4a3a8cab1d9fc10a13f3af231c775e95bb37e4e.js" integrity="sha256-gchlXpRG5lS8SrKG9KOoyrHZ/BChPzryMcd16Vuzfk4="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -132,7 +134,11 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#quick-start">Quick Start</a></li>
+    <li><a href="#quick-start">Quick Start</a>
+      <ul>
+        <li><a href="#example-plugin">Example Plugin</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -148,7 +154,31 @@ https://github.com/alex-shpak/hugo-book
   Quick Start
   <a class="anchor" href="#quick-start">#</a>
 </h1>
-</article>
+<h2 id="example-plugin">
+  Example Plugin
+  <a class="anchor" href="#example-plugin">#</a>
+</h2>
+<p>lib.rs</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#75715e">// Define a function that is imported into the module.
+</span><span style="color:#75715e">// See the list (TODO) what functions are available to be imported.
+</span><span style="color:#75715e">// We use here the send_notice function which sends a m.notice event
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">extern</span> <span style="color:#e6db74">&#34;C&#34;</span> {
+    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">send_notice</span>(content_ptr: <span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">u8</span>, content_len: <span style="color:#66d9ef">usize</span>, room_id_ptr: <span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">u8</span>, room_id_len: <span style="color:#66d9ef">usize</span>);
+}
+
+<span style="color:#75715e">// Export a function named &#34;main_plugin&#34;. This can be called
+</span><span style="color:#75715e">// from the framework!
+</span><span style="color:#75715e"></span><span style="color:#75715e">#[no_mangle]</span>
+<span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main_plugin</span>() {
+    <span style="color:#75715e">// Call the function we just imported and pass in
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// the offset of our string and its length as parameters.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>;
+    <span style="color:#66d9ef">let</span> room_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;!FJymnHKxIlQeNDkaZW:ubports.chat&#34;</span>;
+    <span style="color:#66d9ef">unsafe</span> {
+      send_notice(content.as_ptr(), content.len(), room_id.as_ptr(), room_id.len());
+    }
+}
+</code></pre></div></article>
  
       
 
@@ -191,7 +221,11 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#quick-start">Quick Start</a></li>
+    <li><a href="#quick-start">Quick Start</a>
+      <ul>
+        <li><a href="#example-plugin">Example Plugin</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

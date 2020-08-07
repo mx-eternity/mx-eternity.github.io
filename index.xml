@@ -15,7 +15,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mx-eternity.github.io/docs/developer/getting_started/quickstart/</guid>
-      <description>Quick Start#</description>
+      <description>Quick Start#Example Plugin#lib.rs
+// Define a function that is imported into the module. // See the list (TODO) what functions are available to be imported. // We use here the send_notice function which sends a m.notice event extern &amp;#34;C&amp;#34; { fn send_notice(content_ptr: *const u8, content_len: usize, room_id_ptr: *const u8, room_id_len: usize); } // Export a function named &amp;#34;main_plugin&amp;#34;. This can be called // from the framework!</description>
     </item>
     
     <item>
