@@ -5,18 +5,18 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Quick Start#Example Plugin#lib.rs
-// Define a function that is imported into the module. // See the list (TODO) what functions are available to be imported. // We use here the send_notice function which sends a m.notice event extern &#34;C&#34; { fn send_notice(content_ptr: *const u8, content_len: usize, room_id_ptr: *const u8, room_id_len: usize); } // Export a function named &#34;main_plugin&#34;. This can be called // from the framework!">
+#![no_main] // Define the functions from the framework which allow access to sending messages extern &#34;C&#34; { fn send_message( content_ptr: *const u8, content_len: usize, room_id_ptr: *const u8, room_id_len: usize, ); } // Export a function named &#34;main_plugin&#34;. This can be called // from the framework! #[no_mangle] pub extern &#34;C&#34; fn main_plugin() { println!(&#34;called main_plugin&#34;); // Call the function we just imported and pass in  // the offset of our string and its length as parameters.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="Quick Start#Example Plugin#lib.rs
-// Define a function that is imported into the module. // See the list (TODO) what functions are available to be imported. // We use here the send_notice function which sends a m.notice event extern &#34;C&#34; { fn send_notice(content_ptr: *const u8, content_len: usize, room_id_ptr: *const u8, room_id_len: usize); } // Export a function named &#34;main_plugin&#34;. This can be called // from the framework!" />
+#![no_main] // Define the functions from the framework which allow access to sending messages extern &#34;C&#34; { fn send_message( content_ptr: *const u8, content_len: usize, room_id_ptr: *const u8, room_id_len: usize, ); } // Export a function named &#34;main_plugin&#34;. This can be called // from the framework! #[no_mangle] pub extern &#34;C&#34; fn main_plugin() { println!(&#34;called main_plugin&#34;); // Call the function we just imported and pass in  // the offset of our string and its length as parameters." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mx-eternity.github.io/docs/developer/getting_started/quickstart/" />
-<meta property="article:modified_time" content="2020-07-22T22:01:39+02:00" />
+<meta property="article:modified_time" content="2020-08-07T21:01:19+02:00" />
 <title>Quickstart | Matrix Eternity Documentation</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1a131c7481808eb224a861e902f1d8c9281d14ff14ed144454d086c8d6fd5cca.css" integrity="sha256-GhMcdIGAjrIkqGHpAvHYySgdFP8U7RREVNCGyNb9XMo=">
-<script defer src="/en.search.min.81c8655e9446e654bc4ab286f4a3a8cab1d9fc10a13f3af231c775e95bb37e4e.js" integrity="sha256-gchlXpRG5lS8SrKG9KOoyrHZ/BChPzryMcd16Vuzfk4="></script>
+<script defer src="/en.search.min.e78b5b3d27f524f3316f39ae87baff6567bf7d05f5c7a7865d7e870a87de70af.js" integrity="sha256-54tbPSf1JPMxbzmuh7r/ZWe/fQX1x6eGXX6HCofecK8="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -159,26 +159,43 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#example-plugin">#</a>
 </h2>
 <p>lib.rs</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#75715e">// Define a function that is imported into the module.
-</span><span style="color:#75715e">// See the list (TODO) what functions are available to be imported.
-</span><span style="color:#75715e">// We use here the send_notice function which sends a m.notice event
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#75715e">#![no_main]</span>
+
+<span style="color:#75715e">// Define the functions from the framework which allow access to sending messages
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">extern</span> <span style="color:#e6db74">&#34;C&#34;</span> {
-    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">send_notice</span>(content_ptr: <span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">u8</span>, content_len: <span style="color:#66d9ef">usize</span>, room_id_ptr: <span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">u8</span>, room_id_len: <span style="color:#66d9ef">usize</span>);
+    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">send_message</span>(
+        content_ptr: <span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">u8</span>,
+        content_len: <span style="color:#66d9ef">usize</span>,
+        room_id_ptr: <span style="color:#f92672">*</span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">u8</span>,
+        room_id_len: <span style="color:#66d9ef">usize</span>,
+    );
 }
 
 <span style="color:#75715e">// Export a function named &#34;main_plugin&#34;. This can be called
 </span><span style="color:#75715e">// from the framework!
 </span><span style="color:#75715e"></span><span style="color:#75715e">#[no_mangle]</span>
-<span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main_plugin</span>() {
+<span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">extern</span> <span style="color:#e6db74">&#34;C&#34;</span> <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main_plugin</span>() {
+    println<span style="color:#f92672">!</span>(<span style="color:#e6db74">&#34;called main_plugin&#34;</span>);
     <span style="color:#75715e">// Call the function we just imported and pass in
 </span><span style="color:#75715e"></span>    <span style="color:#75715e">// the offset of our string and its length as parameters.
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>;
-    <span style="color:#66d9ef">let</span> room_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;!FJymnHKxIlQeNDkaZW:ubports.chat&#34;</span>;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> content <span style="color:#f92672">=</span>
+        <span style="color:#e6db74">&#34;{\&#34;type\&#34;: \&#34;m.room.message\&#34;,\&#34;content\&#34;: {\&#34;msgtype\&#34;: \&#34;m.text\&#34;,\&#34;body\&#34;: \&#34;test\&#34;}}&#34;</span>;
+    <span style="color:#66d9ef">let</span> room_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;!KwXDovBFhYakswlOwN:nordgedanken.dev&#34;</span>;
     <span style="color:#66d9ef">unsafe</span> {
-      send_notice(content.as_ptr(), content.len(), room_id.as_ptr(), room_id.len());
+        send_message(
+            content.as_ptr(),
+            content.len(),
+            room_id.as_ptr(),
+            room_id.len(),
+        );
     }
 }
-</code></pre></div></article>
+</code></pre></div><blockquote class="book-hint warning">
+  <strong>TODO</strong><br>
+Further decide what format we use to transfer the message from plugins back to the framework. (Can we serialize stuff using ruma?)
+</blockquote>
+
+</article>
  
       
 
@@ -188,9 +205,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/mx-eternity/docs/commit/c0e983457db7a13f75bbd6bb8e5836d51af411ef" title='Last modified by Marcel | 22 July, 2020' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/mx-eternity/docs/commit/5e9b6f0c72b1526da27cae0f66bf1b2405e2650e" title='Last modified by MTRNord | 7 August, 2020' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>22 July, 2020</span>
+      <span>7 August, 2020</span>
     </a>
   </div>
 
