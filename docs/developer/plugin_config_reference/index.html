@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Plugin Config File Reference#The plugin file is defined in yaml. Below is a example file. The table explains what each variable does.
-Example Flow#name: gitlab_plugin version: 0.1.0 exported_functions: - get_issues - name: add_issue args: - repo - title - text has_help: true license: AGPL-3.0-or-later depndencies: [] TODO: plan Database managment
+Example Flow#{ &#34;name&#34;: &#34;gitlab_plugin&#34;, &#34;version&#34;: &#34;0.1.0&#34;, &#34;exported_functions&#34;: [ &#34;get_issues&#34;, { &#34;name&#34;: &#34;add_issue&#34;, &#34;args&#34;: [ &#34;repo&#34;, &#34;title&#34;, &#34;text&#34; ] } ], &#34;has_help&#34;: true, &#34;license&#34;: &#34;AGPL-3.0-or-later&#34;, &#34;dependencies&#34;: [] } TODO: plan Database managment
 Reference#Root#   Key Description     name An identifier to use with the dependency array in other plugins   version A semver version of the plugin to identify the version (In the future might make migrations possible)   exported_functions A list of functions that can be used inside of flows.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="Plugin Config File Reference#The plugin file is defined in yaml. Below is a example file. The table explains what each variable does.
-Example Flow#name: gitlab_plugin version: 0.1.0 exported_functions: - get_issues - name: add_issue args: - repo - title - text has_help: true license: AGPL-3.0-or-later depndencies: [] TODO: plan Database managment
+Example Flow#{ &#34;name&#34;: &#34;gitlab_plugin&#34;, &#34;version&#34;: &#34;0.1.0&#34;, &#34;exported_functions&#34;: [ &#34;get_issues&#34;, { &#34;name&#34;: &#34;add_issue&#34;, &#34;args&#34;: [ &#34;repo&#34;, &#34;title&#34;, &#34;text&#34; ] } ], &#34;has_help&#34;: true, &#34;license&#34;: &#34;AGPL-3.0-or-later&#34;, &#34;dependencies&#34;: [] } TODO: plan Database managment
 Reference#Root#   Key Description     name An identifier to use with the dependency array in other plugins   version A semver version of the plugin to identify the version (In the future might make migrations possible)   exported_functions A list of functions that can be used inside of flows." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mx-eternity.github.io/docs/developer/plugin_config_reference/" />
@@ -18,7 +18,7 @@ Reference#Root#   Key Description     name An identifier to use with the d
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1a131c7481808eb224a861e902f1d8c9281d14ff14ed144454d086c8d6fd5cca.css" integrity="sha256-GhMcdIGAjrIkqGHpAvHYySgdFP8U7RREVNCGyNb9XMo=">
-<script defer src="/en.search.min.e78b5b3d27f524f3316f39ae87baff6567bf7d05f5c7a7865d7e870a87de70af.js" integrity="sha256-54tbPSf1JPMxbzmuh7r/ZWe/fQX1x6eGXX6HCofecK8="></script>
+<script defer src="/en.search.min.4626c6af455eedf422e7ac7870eaba8dcaab4151474f89990a272acf38e6b925.js" integrity="sha256-RibGr0Ve7fQi56x4cOq6jcqrQVFHT4mZCicqzzjmuSU="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -167,18 +167,24 @@ https://github.com/alex-shpak/hugo-book
   Example Flow
   <a class="anchor" href="#example-flow">#</a>
 </h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: gitlab_plugin
-<span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">0.1.0</span>
-<span style="color:#66d9ef">exported_functions</span>:
-  - get_issues
-  - <span style="color:#66d9ef">name</span>: add_issue
-    <span style="color:#66d9ef">args</span>:
-    - repo
-    - title
-    - text
-<span style="color:#66d9ef">has_help</span>: <span style="color:#66d9ef">true</span>
-<span style="color:#66d9ef">license</span>: AGPL<span style="color:#ae81ff">-3.0</span>-or-later
-<span style="color:#66d9ef">depndencies</span>: []
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;gitlab_plugin&#34;</span>,
+  <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;0.1.0&#34;</span>,
+  <span style="color:#f92672">&#34;exported_functions&#34;</span>: [
+    <span style="color:#e6db74">&#34;get_issues&#34;</span>,
+    {
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;add_issue&#34;</span>,
+      <span style="color:#f92672">&#34;args&#34;</span>: [
+        <span style="color:#e6db74">&#34;repo&#34;</span>,
+        <span style="color:#e6db74">&#34;title&#34;</span>,
+        <span style="color:#e6db74">&#34;text&#34;</span>
+      ]
+    }
+  ],
+  <span style="color:#f92672">&#34;has_help&#34;</span>: <span style="color:#66d9ef">true</span>,
+  <span style="color:#f92672">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;AGPL-3.0-or-later&#34;</span>,
+  <span style="color:#f92672">&#34;dependencies&#34;</span>: []
+}
 </code></pre></div><p>TODO: plan Database managment</p>
 <h2 id="reference">
   Reference

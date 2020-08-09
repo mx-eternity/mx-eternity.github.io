@@ -26,7 +26,7 @@
       
       <guid>https://mx-eternity.github.io/docs/developer/plugin_config_reference/</guid>
       <description>Plugin Config File Reference#The plugin file is defined in yaml. Below is a example file. The table explains what each variable does.
-Example Flow#name: gitlab_plugin version: 0.1.0 exported_functions: - get_issues - name: add_issue args: - repo - title - text has_help: true license: AGPL-3.0-or-later depndencies: [] TODO: plan Database managment
+Example Flow#{ &amp;#34;name&amp;#34;: &amp;#34;gitlab_plugin&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;0.1.0&amp;#34;, &amp;#34;exported_functions&amp;#34;: [ &amp;#34;get_issues&amp;#34;, { &amp;#34;name&amp;#34;: &amp;#34;add_issue&amp;#34;, &amp;#34;args&amp;#34;: [ &amp;#34;repo&amp;#34;, &amp;#34;title&amp;#34;, &amp;#34;text&amp;#34; ] } ], &amp;#34;has_help&amp;#34;: true, &amp;#34;license&amp;#34;: &amp;#34;AGPL-3.0-or-later&amp;#34;, &amp;#34;dependencies&amp;#34;: [] } TODO: plan Database managment
 Reference#Root#   Key Description     name An identifier to use with the dependency array in other plugins   version A semver version of the plugin to identify the version (In the future might make migrations possible)   exported_functions A list of functions that can be used inside of flows.</description>
     </item>
     
